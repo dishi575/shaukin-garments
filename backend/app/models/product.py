@@ -62,5 +62,5 @@ class MLInteraction(Base):
     interaction  = Column(SAEnum("view","search","add_to_cart","quote_request","order","download_catalogue",
                                  name="interaction_type"), nullable=False)
     weight       = Column(Float, default=1.0)
-    metadata     = Column(JSONB)
+    extra_data   = Column(JSONB)
     created_at   = Column(DateTime(timezone=True), server_default=func.now())
