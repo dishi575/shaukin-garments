@@ -6,7 +6,7 @@ import { useAuthStore } from "@/lib/store";
 import { authApi } from "@/lib/api";
 
 export default function RegisterPage() {
-  const [form, setForm] = useState({ name:"", email:"", password:"", phone:"", role:"retail_customer" as const, company:"" });
+  const [form, setForm] = useState<{ name: string; email: string; password: string; phone: string; role: string; company: string; gst_number: string }>({ name: "", email: "", password: "", phone: "", role: "retail_customer", company: "", gst_number: "" });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const { setUser } = useAuthStore();
