@@ -10,7 +10,6 @@ cloudinary.config(
     cloud_name=settings.CLOUDINARY_CLOUD_NAME,
     api_key=settings.CLOUDINARY_API_KEY,
     api_secret=settings.CLOUDINARY_API_SECRET,
-    secure=True,
 )
 
 @router.post("")
@@ -20,7 +19,6 @@ async def upload_image(
 ):
     if not file.content_type.startswith("image/"):
         raise HTTPException(status_code=400, detail="Only image files allowed")
-    
     if file.size and file.size > 5 * 1024 * 1024:
         raise HTTPException(status_code=400, detail="Image must be under 5MB")
 
@@ -28,10 +26,6 @@ async def upload_image(
     result = cloudinary.uploader.upload(
         contents,
         folder="shaukin-garments/products",
-        transformation=[
-            {"width": 800, "height": 800, "crop": "limit"},
-            {"quality": "auto:good"},
-            {"fetch_format": "auto"},
-        ],
+        transformation=[{"width": 800, "height": 800, "crop": "limit", "quality": "auto"}],
     )
     return {"url": result["secure_url"], "public_id": result["public_id"]}

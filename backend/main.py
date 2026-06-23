@@ -4,7 +4,8 @@ from contextlib import asynccontextmanager
 
 from app.core.config import settings
 from app.db.session import engine, Base
-from app.routers import auth, users, products, categories, orders, quotes, upload
+from app.routers import auth, users, products, categories, orders, quotes
+from app.routers.upload import router as upload_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -28,13 +29,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(auth.router,       prefix="/api/auth",       tags=["Auth"])
-app.include_router(users.router,      prefix="/api/users",      tags=["Users"])
-app.include_router(categories.router, prefix="/api/categories", tags=["Categories"])
-app.include_router(products.router,   prefix="/api/products",   tags=["Products"])
-app.include_router(orders.router,     prefix="/api/orders",     tags=["Orders"])
-app.include_router(quotes.router,     prefix="/api/quotes",     tags=["Bulk Quotes"])
-app.include_router(upload.router,     prefix="/api/upload",     tags=["Upload"])
+app.include_router(auth.router,         prefix="/api/auth",       tags=["Auth"])
+app.include_router(users.router,        prefix="/api/users",      tags=["Users"])
+app.include_router(categories.router,   prefix="/api/categories", tags=["Categories"])
+app.include_router(products.router,     prefix="/api/products",   tags=["Products"])
+app.include_router(orders.router,       prefix="/api/orders",     tags=["Orders"])
+app.include_router(quotes.router,       prefix="/api/quotes",     tags=["Bulk Quotes"])
+app.include_router(upload_router,       prefix="/api/upload",     tags=["Upload"])
 
 @app.get("/")
 async def root():
