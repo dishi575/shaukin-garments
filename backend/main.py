@@ -4,21 +4,19 @@ from contextlib import asynccontextmanager
 
 from app.core.config import settings
 from app.db.session import engine, Base
-from app.routers import auth, users, products, categories, orders, quotes
+from app.routers import auth, users, products, categories, orders, quotes, upload
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # startup
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
     yield
-    # shutdown
     await engine.dispose()
 
 app = FastAPI(
     title="Shaukin Garments API",
     version="1.0.0",
-    description="Backend API for Shaukin Garments — uniforms & linens B2B/retail platform",
+    description="Backend API for Shaukin Garments",
     lifespan=lifespan,
 )
 
@@ -36,6 +34,7 @@ app.include_router(categories.router, prefix="/api/categories", tags=["Categorie
 app.include_router(products.router,   prefix="/api/products",   tags=["Products"])
 app.include_router(orders.router,     prefix="/api/orders",     tags=["Orders"])
 app.include_router(quotes.router,     prefix="/api/quotes",     tags=["Bulk Quotes"])
+app.include_router(upload.router,     prefix="/api/upload",     tags=["Upload"])
 
 @app.get("/")
 async def root():
