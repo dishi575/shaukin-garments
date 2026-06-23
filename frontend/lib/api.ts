@@ -53,7 +53,7 @@ export interface RegisterPayload {
   email: string;
   password: string;
   phone?: string;
-  role?: "retail_customer" | "b2b_client";
+  role?: string;
   company?: string;
 }
 
