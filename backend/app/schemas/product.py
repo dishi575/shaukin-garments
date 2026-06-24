@@ -11,7 +11,6 @@ class CategoryOut(BaseModel):
     icon: Optional[str]
     image_url: Optional[str]
     sort_order: int
-
     model_config = {"from_attributes": True}
 
 class ProductBase(BaseModel):
@@ -32,6 +31,7 @@ class ProductCreate(ProductBase):
     category_id: Optional[UUID] = None
     slug: str
     stock: int = 0
+    images: Optional[List[str]] = None   # ← THIS WAS MISSING
 
 class ProductUpdate(BaseModel):
     name: Optional[str] = None
@@ -43,6 +43,7 @@ class ProductUpdate(BaseModel):
     price_bulk: Optional[float] = None
     moq: Optional[int] = None
     stock: Optional[int] = None
+    images: Optional[List[str]] = None   # ← also add here for future edits
     is_active: Optional[bool] = None
 
 class ProductOut(ProductBase):
@@ -54,7 +55,6 @@ class ProductOut(ProductBase):
     images: Optional[List[str]]
     is_active: bool
     created_at: datetime
-
     model_config = {"from_attributes": True}
 
 class ProductListOut(BaseModel):
