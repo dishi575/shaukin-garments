@@ -130,7 +130,7 @@ export default function ProductPage() {
             <div className="mb-5">
               <div className="text-sm font-medium mb-2">Available sizes</div>
               <div className="flex flex-wrap gap-2">
-                {product.available_sizes.map(s => (
+                {product.available_sizes.map((s: string) => (
                   <span key={s} className="px-3 py-1 rounded-lg text-sm border" style={{ borderColor: "var(--border)" }}>{s}</span>
                 ))}
               </div>
@@ -142,7 +142,7 @@ export default function ProductPage() {
             <div className="mb-5">
               <div className="text-sm font-medium mb-2">Available colours</div>
               <div className="flex flex-wrap gap-2">
-                {product.available_colors.map(c => (
+                {product.available_colors.map((c: string) => (
                   <span key={c} className="px-3 py-1 rounded-lg text-sm border" style={{ borderColor: "var(--border)" }}>{c}</span>
                 ))}
               </div>
