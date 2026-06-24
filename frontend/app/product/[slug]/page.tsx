@@ -80,7 +80,7 @@ export default function ProductPage() {
           </div>
           {images.length > 1 && (
             <div className="flex gap-2">
-              {images.map((url, i) => (
+              {images.map((url: string, i: number) => (
                 <button key={i} onClick={() => setImgIndex(i)}
                   className="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 transition-all"
                   style={{ border: imgIndex === i ? "2px solid var(--brand)" : "2px solid transparent" }}>
