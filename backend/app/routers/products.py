@@ -16,7 +16,7 @@ router = APIRouter()
 @router.get("", response_model=ProductListOut)
 async def list_products(
     db: AsyncSession = Depends(get_db),
-    category: Optional[str] = Query(None, description="Category slug"),
+    category: Optional[str] = Query(None),
     search: Optional[str] = Query(None),
     bulk_only: bool = False,
     retail_only: bool = False,
@@ -33,11 +33,7 @@ async def list_products(
 
     if search:
         term = f"%{search}%"
-        q = q.where(or_(
-            Product.name.ilike(term),
-            Product.description.ilike(term),
-            Product.fabric.ilike(term),
-        ))
+        q = q.where(or_(Product.name.ilike(term), Product.description.ilike(term), Product.fabric.ilike(term)))
 
     if bulk_only:
         q = q.where(Product.is_bulk_available == True)
@@ -53,16 +49,15 @@ async def list_products(
 
     return ProductListOut(
         items=[ProductOut.model_validate(p) for p in products],
-        total=total,
-        page=page,
-        pages=math.ceil(total / page_size),
+        total=total, page=page, pages=math.ceil(total / page_size),
     )
 
 
 @router.get("/{slug}", response_model=ProductOut)
 async def get_product(slug: str, db: AsyncSession = Depends(get_db)):
     result = await db.execute(
-        select(Product).options(selectinload(Product.category)).where(Product.slug == slug, Product.is_active == True)
+        select(Product).options(selectinload(Product.category))
+        .where(Product.slug == slug, Product.is_active == True)
     )
     product = result.scalar_one_or_none()
     if not product:
@@ -79,7 +74,11 @@ async def create_product(
     product = Product(**data.model_dump())
     db.add(product)
     await db.flush()
-    await db.refresh(product)
+    # reload with category relationship eagerly
+    result = await db.execute(
+        select(Product).options(selectinload(Product.category)).where(Product.id == product.id)
+    )
+    product = result.scalar_one()
     return ProductOut.model_validate(product)
 
 
@@ -90,14 +89,14 @@ async def update_product(
     db: AsyncSession = Depends(get_db),
     _admin=Depends(require_admin),
 ):
-    result = await db.execute(select(Product).where(Product.id == product_id))
+    result = await db.execute(
+        select(Product).options(selectinload(Product.category)).where(Product.id == product_id)
+    )
     product = result.scalar_one_or_none()
     if not product:
         raise HTTPException(status_code=404, detail="Product not found")
-
     for field, value in data.model_dump(exclude_unset=True).items():
         setattr(product, field, value)
-
     await db.flush()
     await db.refresh(product)
     return ProductOut.model_validate(product)
@@ -113,5 +112,5 @@ async def delete_product(
     product = result.scalar_one_or_none()
     if not product:
         raise HTTPException(status_code=404, detail="Product not found")
-    product.is_active = False   # soft delete
+    product.is_active = False
     await db.flush()
