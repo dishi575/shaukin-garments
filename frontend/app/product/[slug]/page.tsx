@@ -2,10 +2,12 @@
 import { useQuery } from "@tanstack/react-query";
 import { productsApi } from "@/lib/api";
 import { useCartStore } from "@/lib/cartStore";
+import { track } from "@/lib/track";
+import { RecommendationStrip } from "@/components/product/RecommendationStrip";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Package, ArrowLeft, ShoppingCart, MessageCircle, ChevronLeft, ChevronRight, Check } from "lucide-react";
 
 export default function ProductPage() {
@@ -20,6 +22,10 @@ export default function ProductPage() {
     queryFn: () => productsApi.get(slug).then(r => r.data),
     enabled: !!slug,
   });
+
+  useEffect(() => {
+    if (product?.id) track("view", product.id, product.category_id);
+  }, [product?.id]);
 
   if (isLoading) return (
     <div className="max-w-6xl mx-auto px-4 py-16 flex items-center justify-center">
@@ -46,8 +52,13 @@ export default function ProductPage() {
       image: images[0],
       category: product.category?.name,
     }, qty);
+    track("add_to_cart", product.id, product.category_id);
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
+  }
+
+  function handleQuoteClick() {
+    track("quote_request", product.id, product.category_id);
   }
 
   return (
@@ -166,13 +177,13 @@ export default function ProductPage() {
             )}
             {product.is_bulk_available && (
               <a href={`https://wa.me/917408470002?text=${encodeURIComponent(`Hi, I need a bulk quote for ${product.name}. MOQ: ${product.moq} pieces.`)}`}
-                target="_blank" rel="noreferrer"
+                target="_blank" rel="noreferrer" onClick={handleQuoteClick}
                 className="flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-sm text-white"
                 style={{ background: "#25D366" }}>
                 <MessageCircle size={16} /> Request bulk quote on WhatsApp
               </a>
             )}
-            <Link href="/bulk-quote"
+            <Link href="/bulk-quote" onClick={handleQuoteClick}
               className="flex items-center justify-center py-3 rounded-xl text-sm border font-medium"
               style={{ borderColor: "var(--border)", color: "var(--text-secondary)" }}>
               Submit a detailed bulk quote request
@@ -180,6 +191,8 @@ export default function ProductPage() {
           </div>
         </div>
       </div>
+
+      <RecommendationStrip productId={product.id} title="Frequently ordered together" />
     </div>
   );
 }

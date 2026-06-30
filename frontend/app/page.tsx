@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
 import { categoriesApi, productsApi } from "@/lib/api";
 import { ProductCard } from "@/components/product/ProductCard";
+import { RecommendationStrip } from "@/components/product/RecommendationStrip";
 import { ArrowRight, Truck, Users, ShieldCheck, RefreshCw } from "lucide-react";
 
 const CATEGORY_ICONS: Record<string, string> = {
@@ -107,6 +108,10 @@ export default function HomePage() {
             </div>
           )}
         </div>
+      </section>
+
+      <section className="max-w-7xl mx-auto px-4">
+        <RecommendationStrip title="Trending right now" />
       </section>
 
       <section className="max-w-7xl mx-auto px-4 py-16">

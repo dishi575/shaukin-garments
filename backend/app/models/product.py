@@ -50,17 +50,3 @@ class Product(Base):
 
     category = relationship("Category", back_populates="products")
 
-
-class MLInteraction(Base):
-    __tablename__ = "ml_interactions"
-
-    id           = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    user_id      = Column(UUID(as_uuid=True), ForeignKey("users.id", ondelete="SET NULL"))
-    session_id   = Column(String(100), index=True)
-    product_id   = Column(UUID(as_uuid=True), ForeignKey("products.id", ondelete="CASCADE"), index=True)
-    category_id  = Column(UUID(as_uuid=True), ForeignKey("categories.id", ondelete="SET NULL"))
-    interaction  = Column(SAEnum("view","search","add_to_cart","quote_request","order","download_catalogue",
-                                 name="interaction_type"), nullable=False)
-    weight       = Column(Float, default=1.0)
-    extra_data   = Column(JSONB)
-    created_at   = Column(DateTime(timezone=True), server_default=func.now())
