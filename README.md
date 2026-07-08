@@ -291,5 +291,383 @@ J --> K["Business Confirmed"]
 | **Deployment** | Vercel + Render |
 
 ---
+# ⚙ Technology Stack
 
-> 📌 **Continue to Part 2** for the technical architecture, technology stack, installation guide, API overview, and project structure.
+The platform follows a modern cloud-native architecture with a clear separation between the presentation layer, business logic, data layer, and machine learning components.
+
+<div align="center">
+
+| Frontend | Backend | Database | AI / ML |
+|:---------:|:-------:|:--------:|:-------:|
+| Next.js 14 | FastAPI | PostgreSQL | scikit-learn |
+| TypeScript | Python 3.11 | Supabase | TF-IDF |
+| Tailwind CSS | SQLAlchemy Async | AsyncPG | Cosine Similarity |
+| Zustand | Pydantic | JSONB | Collaborative Filtering |
+| TanStack Query | JWT | UUID | Hybrid Ranking |
+
+</div>
+
+<br>
+
+<div align="center">
+
+| DevOps | Cloud Services |
+|:-------:|:--------------:|
+| Git & GitHub | Vercel |
+| Render | Cloudinary |
+| OpenAPI | Razorpay |
+
+</div>
+
+---
+
+# 📂 Project Structure
+
+The repository is organized into independent frontend and backend applications, making development, deployment, and maintenance significantly easier.
+
+```text
+shaukin-garments/
+
+├── backend/
+│   ├── app/
+│   │   ├── core/
+│   │   ├── db/
+│   │   ├── ml/
+│   │   ├── models/
+│   │   ├── routers/
+│   │   ├── schemas/
+│   │   └── services/
+│   │
+│   ├── requirements.txt
+│   ├── schema.sql
+│   └── main.py
+│
+├── frontend/
+│   ├── app/
+│   ├── components/
+│   ├── hooks/
+│   ├── lib/
+│   ├── store/
+│   └── public/
+│
+├── assets/
+│
+├── docs/
+│
+├── README.md
+│
+└── LICENSE
+```
+
+---
+
+# 🚀 Getting Started
+
+## Prerequisites
+
+Make sure the following are installed on your machine.
+
+- Node.js 18+
+- Python 3.11+
+- PostgreSQL (or Supabase)
+- Git
+
+---
+
+# 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/dishi575/shaukin-garments.git
+
+cd shaukin-garments
+```
+
+---
+
+# 2️⃣ Backend Setup
+
+Create a virtual environment.
+
+```bash
+cd backend
+
+python -m venv venv
+```
+
+Activate it.
+
+Windows
+
+```bash
+venv\Scripts\activate
+```
+
+Linux / macOS
+
+```bash
+source venv/bin/activate
+```
+
+Install dependencies.
+
+```bash
+pip install -r requirements.txt
+```
+
+Create the environment file.
+
+```bash
+cp .env.example .env
+```
+
+Import the database schema.
+
+```bash
+psql DATABASE_URL -f schema.sql
+```
+
+Start the backend.
+
+```bash
+uvicorn main:app --reload
+```
+
+Backend
+
+```
+http://localhost:8000
+```
+
+Swagger
+
+```
+http://localhost:8000/docs
+```
+
+---
+
+# 3️⃣ Frontend Setup
+
+Install dependencies.
+
+```bash
+cd frontend
+
+npm install
+```
+
+Create
+
+```text
+.env.local
+```
+
+Run
+
+```bash
+npm run dev
+```
+
+Frontend
+
+```
+http://localhost:3000
+```
+
+---
+
+# 🔐 Environment Variables
+
+## Backend
+
+| Variable | Description |
+|-----------|-------------|
+| DATABASE_URL | PostgreSQL connection |
+| SECRET_KEY | JWT signing key |
+| ALGORITHM | JWT algorithm |
+| ACCESS_TOKEN_EXPIRE_MINUTES | Token expiry |
+| CLOUDINARY_CLOUD_NAME | Cloudinary account |
+| CLOUDINARY_API_KEY | API Key |
+| CLOUDINARY_API_SECRET | API Secret |
+| RAZORPAY_KEY_ID | Payment gateway |
+| RAZORPAY_KEY_SECRET | Payment gateway |
+
+---
+
+## Frontend
+
+| Variable | Description |
+|-----------|-------------|
+| NEXT_PUBLIC_API_URL | Backend URL |
+| NEXT_PUBLIC_RAZORPAY_KEY | Razorpay Public Key |
+
+---
+
+# 📡 REST API Overview
+
+The backend exposes a RESTful API built with FastAPI.
+
+Every endpoint is documented automatically through OpenAPI and can be explored interactively using Swagger.
+
+---
+
+## Authentication
+
+| Method | Endpoint | Description |
+|----------|----------|-------------|
+| POST | `/api/auth/register` | Create account |
+| POST | `/api/auth/login` | Login |
+| GET | `/api/auth/me` | Current user |
+
+---
+
+## Products
+
+| Method | Endpoint |
+|----------|----------|
+| GET | `/api/products` |
+| GET | `/api/products/{slug}` |
+| POST | `/api/products` |
+| PATCH | `/api/products/{id}` |
+| DELETE | `/api/products/{id}` |
+
+---
+
+## Quotations
+
+| Method | Endpoint |
+|----------|----------|
+| POST | `/api/quotes` |
+| GET | `/api/quotes` |
+| PATCH | `/api/quotes/{id}` |
+
+---
+
+## Orders
+
+| Method | Endpoint |
+|----------|----------|
+| POST | `/api/orders` |
+| GET | `/api/orders/my` |
+
+---
+
+## Recommendations
+
+| Method | Endpoint |
+|----------|----------|
+| POST | `/api/recommendations/track` |
+| GET | `/api/recommendations/product/{id}` |
+| GET | `/api/recommendations/home` |
+
+---
+
+# 🔄 Request Lifecycle
+
+Every interaction follows a predictable flow through the application.
+
+```mermaid
+sequenceDiagram
+
+participant User
+
+participant Frontend
+
+participant Backend
+
+participant Database
+
+User->>Frontend: Browse Products
+
+Frontend->>Backend: GET /products
+
+Backend->>Database: Query Products
+
+Database-->>Backend: Product Data
+
+Backend-->>Frontend: JSON Response
+
+Frontend-->>User: Render Catalogue
+```
+
+---
+
+# 🔐 Authentication Flow
+
+Role-based authentication is implemented using JWT.
+
+```mermaid
+sequenceDiagram
+
+participant User
+
+participant Frontend
+
+participant Backend
+
+participant Database
+
+User->>Frontend: Login
+
+Frontend->>Backend: Credentials
+
+Backend->>Database: Verify User
+
+Database-->>Backend: User
+
+Backend-->>Frontend: JWT Token
+
+Frontend->>Backend: Protected Request
+
+Backend->>Backend: Verify Token
+
+Backend-->>Frontend: Authorized Response
+```
+
+---
+
+# 📁 Application Modules
+
+<div align="center">
+
+| Module | Responsibility |
+|:------:|---------------|
+| 🛍 Catalogue | Product browsing and filtering |
+| 📦 Products | Inventory & product information |
+| 🛒 Cart | Shopping experience |
+| 🏢 Bulk Quotes | Institutional procurement |
+| ⚙ Admin | Product & quotation management |
+| 🔐 Auth | User authentication |
+| 🤖 Recommendation Engine | Intelligent product suggestions |
+
+</div>
+
+---
+
+# 🧠 Recommendation Pipeline
+
+Every customer interaction contributes to future recommendations.
+
+```mermaid
+flowchart TD
+
+A[Customer Views Product]
+
+--> B[Track Interaction]
+
+--> C[(ML Interactions)]
+
+C --> D[Content Similarity]
+
+C --> E[Collaborative Filtering]
+
+D --> F[Hybrid Ranking]
+
+E --> F
+
+F --> G[Recommended Products]
+```
+
+---
+
+> 📌 **Continue to Part 3** for database design, deployment architecture, roadmap, contributing guide, and final project information.
