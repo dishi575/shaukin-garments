@@ -669,5 +669,300 @@ F --> G[Recommended Products]
 ```
 
 ---
+# 🗄 Database Design
 
-> 📌 **Continue to Part 3** for database design, deployment architecture, roadmap, contributing guide, and final project information.
+The application is powered by PostgreSQL with a relational schema designed to support both retail commerce and institutional procurement workflows.
+
+```mermaid
+erDiagram
+
+USERS ||--o{ ORDERS : places
+
+USERS ||--o{ BULK_QUOTES : submits
+
+USERS ||--o{ ML_INTERACTIONS : performs
+
+CATEGORIES ||--o{ PRODUCTS : contains
+
+PRODUCTS ||--o{ ML_INTERACTIONS : tracked
+
+BULK_QUOTES ||--o| ORDERS : converts_to
+```
+
+---
+
+## Core Tables
+
+| Table | Purpose |
+|---------|---------|
+| **Users** | Customer accounts, authentication and roles |
+| **Products** | Product catalogue and inventory |
+| **Categories** | Product categorization |
+| **Orders** | Retail purchases |
+| **Bulk Quotes** | Institutional procurement requests |
+| **ML Interactions** | Behaviour tracking for recommendations |
+
+---
+
+# 🤖 Recommendation Engine
+
+Rather than displaying static "Related Products", Shaukin continuously learns from customer interactions to surface more relevant recommendations.
+
+The recommendation engine combines two independent techniques into a hybrid ranking system.
+
+- Content Similarity (TF-IDF)
+- Collaborative Filtering
+- Behaviour Tracking
+- Hybrid Ranking
+
+---
+
+## Recommendation Workflow
+
+```mermaid
+flowchart TD
+
+A[Product Viewed]
+
+--> B[Track Interaction]
+
+--> C[(Interaction Database)]
+
+C --> D[Content Based Filtering]
+
+C --> E[Collaborative Filtering]
+
+D --> F[Hybrid Ranking]
+
+E --> F
+
+F --> G[Top Recommendations]
+
+G --> H[Displayed to Customer]
+```
+
+---
+
+# 🚀 Deployment Architecture
+
+The platform is deployed as independent frontend and backend applications with managed cloud services.
+
+```mermaid
+graph TD
+
+GitHub
+
+--> Vercel
+
+GitHub
+
+--> Render
+
+Render --> PostgreSQL
+
+Render --> Cloudinary
+
+Render --> Razorpay
+
+Vercel --> User
+```
+
+---
+
+## Production Stack
+
+| Layer | Platform |
+|--------|----------|
+| Frontend | Vercel |
+| Backend | Render |
+| Database | Supabase PostgreSQL |
+| Image Storage | Cloudinary |
+| Payments | Razorpay |
+| Version Control | GitHub |
+
+---
+
+# 📦 Deployment
+
+The application is designed around independent deployments.
+
+### Frontend
+
+```bash
+npm run build
+```
+
+Deploy to
+
+- Vercel
+
+---
+
+### Backend
+
+```bash
+uvicorn main:app
+```
+
+Deploy to
+
+- Render
+
+---
+
+### Database
+
+Hosted using
+
+- Supabase PostgreSQL
+
+---
+
+### Images
+
+Uploaded directly to
+
+- Cloudinary
+
+---
+
+# 🛣 Roadmap
+
+## ✅ Completed
+
+- [x] Full Stack E-Commerce Platform
+- [x] Institutional Procurement Workflow
+- [x] Product Catalogue
+- [x] Authentication
+- [x] Shopping Cart
+- [x] Admin Dashboard
+- [x] Cloud Image Upload
+- [x] Recommendation Engine
+- [x] Production Deployment
+
+---
+
+## 🚧 Currently Improving
+
+- [ ] Mobile UI Refinements
+- [ ] SEO Improvements
+- [ ] Performance Optimization
+- [ ] Analytics Dashboard
+
+---
+
+## 💡 Future Ideas
+
+- [ ] WhatsApp Business API
+- [ ] Email Notifications
+- [ ] Inventory Forecasting
+- [ ] Demand Prediction
+- [ ] Customer Analytics
+- [ ] PWA Support
+- [ ] Multi-vendor Marketplace
+- [ ] AI-powered Procurement Assistant
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+If you'd like to improve the project:
+
+1. Fork the repository
+
+2. Create a feature branch
+
+```bash
+git checkout -b feature/new-feature
+```
+
+3. Commit changes
+
+```bash
+git commit -m "Add new feature"
+```
+
+4. Push
+
+```bash
+git push origin feature/new-feature
+```
+
+5. Open a Pull Request
+
+---
+
+# 📚 Documentation
+
+Additional technical documentation is available in the **docs/** directory.
+
+| Document | Description |
+|-----------|-------------|
+| architecture.md | System architecture |
+| api.md | REST API reference |
+| database.md | Database schema |
+| recommendation-engine.md | Recommendation system |
+| deployment.md | Deployment guide |
+| engineering-decisions.md | Design decisions |
+
+---
+
+# 💻 Future Engineering Improvements
+
+Some areas planned for future iterations include:
+
+- Redis caching
+- Background workers
+- Elasticsearch product search
+- Docker Compose
+- CI/CD pipelines
+- Kubernetes deployment
+- CDN optimization
+- Horizontal scaling
+
+---
+
+# 👩‍💻 Author
+
+<div align="center">
+
+## Dishita Chaturvedi
+
+Computer Science Engineering Student
+
+AI • Machine Learning • Full Stack Development
+
+[![GitHub](https://img.shields.io/badge/GitHub-dishi575-black?style=for-the-badge&logo=github)](https://github.com/dishi575)
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](YOUR_LINKEDIN)
+
+[![Email](https://img.shields.io/badge/Email-Contact-red?style=for-the-badge&logo=gmail)](mailto:dishitachaturvedi2005@gmail.com)
+
+</div>
+
+---
+
+# 📄 License
+
+Distributed under the MIT License.
+
+See the **LICENSE** file for more information.
+
+---
+
+<div align="center">
+
+## ⭐ If you found this project interesting, consider giving it a star!
+
+### Built to solve a real business problem.
+### Engineered as a modern cloud-native application.
+
+<img src="assets/logo.png" width="120"/>
+
+**Shaukin Garments**
+
+*Modern Institutional Commerce Platform*
+
+</div>
