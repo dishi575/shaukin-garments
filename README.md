@@ -394,3 +394,383 @@ K --> L[Admin Dashboard]
 L --> M[Quote Response]
 
 ```
+# 🛠 Technology Stack
+
+The platform is built using a modern cloud-native architecture focused on scalability, maintainability, and developer productivity.
+
+| Category | Technology | Why It Was Chosen |
+|----------|------------|-------------------|
+| **Frontend** | Next.js 14 (App Router) | Server Components, routing, performance, SEO |
+| **Language** | TypeScript | Static typing and maintainability |
+| **Styling** | Tailwind CSS | Utility-first styling with rapid UI development |
+| **Client State** | Zustand | Lightweight global state for authentication and shopping cart |
+| **Server State** | TanStack Query | Data fetching, caching and background synchronization |
+| **Forms** | React Hook Form | Efficient form handling with minimal re-renders |
+| **Backend** | FastAPI | High-performance asynchronous REST API framework |
+| **Language** | Python 3.11 | Mature ecosystem and ML support |
+| **ORM** | SQLAlchemy 2.0 Async | Type-safe asynchronous database operations |
+| **Database Driver** | asyncpg | High-performance PostgreSQL async driver |
+| **Database** | PostgreSQL (Supabase) | ACID compliance, relational data, JSONB support |
+| **Authentication** | JWT + bcrypt | Secure stateless authentication |
+| **Machine Learning** | scikit-learn | TF-IDF Vectorization & Cosine Similarity |
+| **Media Storage** | Cloudinary | Optimized image hosting and CDN delivery |
+| **Payments** | Razorpay | Indian payment gateway |
+| **Deployment (Frontend)** | Vercel | Optimized deployment for Next.js |
+| **Deployment (Backend)** | Render | Cloud hosting for FastAPI |
+| **Version Control** | Git & GitHub | Source code management |
+
+---
+
+# 📂 Project Structure
+
+```text
+shaukin-garments/
+│
+├── backend/
+│   ├── app/
+│   │   ├── core/
+│   │   ├── db/
+│   │   ├── ml/
+│   │   ├── models/
+│   │   ├── routers/
+│   │   ├── schemas/
+│   │   └── services/
+│   │
+│   ├── schema.sql
+│   ├── requirements.txt
+│   └── main.py
+│
+├── frontend/
+│   ├── app/
+│   ├── components/
+│   ├── hooks/
+│   ├── lib/
+│   ├── store/
+│   └── public/
+│
+├── assets/
+│   ├── landing-page.png
+│   ├── products-catalogue.png
+│   ├── product-page.png
+│   ├── cart-page.png
+│   ├── bulk-quote-page.png
+│   ├── admin-dashboard.png
+│   ├── recommendation-engine.png
+│   └── api-docs.png
+│
+├── docs/
+│
+├── README.md
+│
+└── LICENSE
+```
+
+---
+
+# 🚀 Getting Started
+
+## Prerequisites
+
+Before running the project, ensure you have the following installed.
+
+- Node.js 18+
+- Python 3.11+
+- PostgreSQL / Supabase
+- Git
+
+---
+
+# Clone Repository
+
+```bash
+git clone https://github.com/dishi575/shaukin-garments.git
+
+cd shaukin-garments
+```
+
+---
+
+# Backend Setup
+
+```bash
+cd backend
+
+python -m venv venv
+```
+
+### Activate Virtual Environment
+
+Windows
+
+```bash
+venv\Scripts\activate
+```
+
+Linux / macOS
+
+```bash
+source venv/bin/activate
+```
+
+Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Create Environment File
+
+```bash
+cp .env.example .env
+```
+
+Run Database Schema
+
+```bash
+psql DATABASE_URL -f schema.sql
+```
+
+Run Backend
+
+```bash
+uvicorn main:app --reload
+```
+
+Backend
+
+```
+http://localhost:8000
+```
+
+Swagger
+
+```
+http://localhost:8000/docs
+```
+
+---
+
+# Frontend Setup
+
+```bash
+cd frontend
+
+npm install
+```
+
+Create
+
+```text
+.env.local
+```
+
+Run
+
+```bash
+npm run dev
+```
+
+Frontend
+
+```
+http://localhost:3000
+```
+
+---
+
+# 🔐 Environment Variables
+
+## Backend
+
+| Variable | Required | Description |
+|-----------|----------|-------------|
+| DATABASE_URL | ✅ | PostgreSQL Database URL |
+| SECRET_KEY | ✅ | JWT Secret |
+| ALGORITHM | ✅ | JWT Algorithm |
+| ACCESS_TOKEN_EXPIRE_MINUTES | ✅ | Token Expiry |
+| CLOUDINARY_CLOUD_NAME | ✅ | Cloudinary Cloud |
+| CLOUDINARY_API_KEY | ✅ | Cloudinary API Key |
+| CLOUDINARY_API_SECRET | ✅ | Cloudinary Secret |
+| RAZORPAY_KEY_ID | Optional | Razorpay |
+| RAZORPAY_KEY_SECRET | Optional | Razorpay Secret |
+
+---
+
+## Frontend
+
+| Variable | Required |
+|-----------|----------|
+| NEXT_PUBLIC_API_URL | ✅ |
+| NEXT_PUBLIC_RAZORPAY_KEY | Optional |
+
+---
+
+# ⚙ Configuration
+
+## Backend
+
+- FastAPI
+- SQLAlchemy Async
+- JWT Authentication
+- AsyncPG
+- Pydantic
+
+---
+
+## Frontend
+
+- Next.js App Router
+- Zustand
+- TanStack Query
+- TailwindCSS
+
+---
+
+# 📡 REST API Overview
+
+## Authentication
+
+| Method | Endpoint |
+|----------|-----------|
+| POST | /api/auth/register |
+| POST | /api/auth/login |
+| GET | /api/auth/me |
+
+---
+
+## Products
+
+| Method | Endpoint |
+|----------|-----------|
+| GET | /api/products |
+| GET | /api/products/{slug} |
+| POST | /api/products |
+| PATCH | /api/products/{id} |
+| DELETE | /api/products/{id} |
+
+---
+
+## Quotes
+
+| Method | Endpoint |
+|----------|-----------|
+| POST | /api/quotes |
+| GET | /api/quotes |
+| PATCH | /api/quotes/{id} |
+
+---
+
+## Orders
+
+| Method | Endpoint |
+|----------|-----------|
+| POST | /api/orders |
+| GET | /api/orders/my |
+
+---
+
+## Recommendations
+
+| Method | Endpoint |
+|----------|-----------|
+| POST | /api/recommendations/track |
+| GET | /api/recommendations/product/{id} |
+| GET | /api/recommendations/home |
+
+---
+
+# 🧾 Sample API Request
+
+```http
+POST /api/quotes
+```
+
+```json
+{
+  "guest_name":"City Hospital",
+  "guest_phone":"9876543210",
+  "items":[
+      {
+          "name":"Doctor Coat",
+          "qty":50
+      }
+  ]
+}
+```
+
+Response
+
+```json
+{
+  "status":"pending",
+  "message":"Quote request received."
+}
+```
+
+---
+
+# 🗄 Database Design
+
+## Core Tables
+
+- Users
+- Products
+- Categories
+- Orders
+- Bulk Quotes
+- ML Interactions
+
+---
+
+## Entity Relationship Diagram
+
+```mermaid
+erDiagram
+
+USERS ||--o{ ORDERS : places
+
+USERS ||--o{ BULK_QUOTES : submits
+
+CATEGORIES ||--o{ PRODUCTS : contains
+
+PRODUCTS ||--o{ ML_INTERACTIONS : tracked
+
+USERS ||--o{ ML_INTERACTIONS : performs
+```
+
+---
+
+## Database Design Decisions
+
+### Why PostgreSQL?
+
+- ACID Compliance
+- JSONB Support
+- Strong Relationships
+- Mature Ecosystem
+- Excellent Query Performance
+
+---
+
+### Why UUIDs?
+
+- More secure than sequential IDs
+- Prevent resource enumeration
+- Better suited for distributed systems
+
+---
+
+### Why JSONB?
+
+Bulk quotations and order snapshots are stored using JSONB to preserve the original order details even if product information changes later.
+
+---
+
+### Indexes Used
+
+- Product Slug
+- Category
+- Email
+- Recommendation Queries
+- Quote Status
+- Product Search
