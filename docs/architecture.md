@@ -261,41 +261,25 @@ Backend-->>Frontend: Authorized Response
 ```mermaid
 flowchart TD
 
-Client
+A["Client"]
+--> B["Next.js Frontend"]
 
-↓
+B --> C["REST API"]
 
-Frontend
+C --> D["Business Services"]
 
-↓
+D --> E["SQLAlchemy Async ORM"]
 
-REST API
+E --> F[("PostgreSQL")]
 
-↓
+F --> D
 
-Business Services
+D --> G["JSON Response"]
 
-↓
+G --> B
 
-SQLAlchemy
-
-↓
-
-PostgreSQL
-
-↓
-
-Business Services
-
-↓
-
-JSON Response
-
-↓
-
-Frontend
+B --> H["Rendered UI"]
 ```
-
 ---
 
 # Recommendation Flow
@@ -305,35 +289,25 @@ The recommendation engine executes independently of request routing.
 ```mermaid
 flowchart TD
 
-Product
+A["Product View"]
 
-↓
+--> B["Interaction Tracking"]
 
-Interaction Tracking
+B --> C["Interaction Store"]
 
-↓
+C --> D["Recommendation Service"]
 
-Interaction Store
+D --> E["Content-Based Filtering (TF-IDF)"]
 
-↓
+D --> F["Collaborative Filtering"]
 
-Recommendation Service
+E --> G["Hybrid Ranking"]
 
-↓
+F --> G
 
-Content Similarity
+G --> H["Recommended Products"]
 
-+
-
-Collaborative Filtering
-
-↓
-
-Hybrid Ranking
-
-↓
-
-Recommended Products
+H --> I["Frontend Display"]
 ```
 
 ---
