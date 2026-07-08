@@ -322,19 +322,17 @@ Completed
 ```mermaid
 flowchart LR
 
-Submitted
+A["Quote Submitted"]
+--> B["Admin Review"]
+--> C{"Decision"}
 
--->
+C -->|Approve| D["Quotation Sent"]
 
-Under Review
+C -->|Reject| E["Rejected"]
 
--->
+D --> F["Customer Confirmation"]
 
-Approved
-
--->
-
-Converted to Order
+F --> G["Order Created"]
 ```
 
 ---
