@@ -23,7 +23,7 @@ A production-ready full-stack commerce platform built to digitize institutional 
 
 ---
 
-# ✨ Overview
+# ✨ Introduction
 
 Shaukin Garments is a **production-grade B2B and retail e-commerce platform** designed specifically for institutional uniform suppliers.
 
