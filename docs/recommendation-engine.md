@@ -129,22 +129,21 @@ This approach performs well for newly added products where interaction history i
 
 ---
 
-# Content Similarity Workflow
+## Content Similarity Workflow
 
 ```mermaid
 flowchart LR
 
-Products
+A["Product Metadata"]
+--> B["Text Preprocessing"]
 
---> Text Processing
+B --> C["TF-IDF Vectorizer"]
 
---> TF-IDF Vectorizer
+C --> D["Feature Vectors"]
 
---> Feature Matrix
+D --> E["Cosine Similarity Matrix"]
 
---> Cosine Similarity
-
---> Similar Products
+E --> F["Top Similar Products"]
 ```
 
 ---
@@ -171,27 +170,21 @@ Products frequently interacted with together receive higher recommendation score
 Every customer interaction contributes to the recommendation dataset.
 
 ```mermaid
-flowchart LR
+flowchart TD
 
-View
+A["Product View"]
+--> E["Interaction Store"]
 
---> Interaction
+B["Product Click"]
+--> E
 
-Click
+C["Add to Cart"]
+--> E
 
---> Interaction
+D["Purchase"]
+--> E
 
-Cart
-
---> Interaction
-
-Purchase
-
---> Interaction
-
-Interaction
-
---> Recommendation Service
+E --> F["Recommendation Service"]
 ```
 
 ---
@@ -214,25 +207,15 @@ Advantages include:
 # Recommendation Flow
 
 ```mermaid
-flowchart TD
+flowchart LR
 
-Content Score
+A["Content Score"]
+--> C["Hybrid Ranking"]
 
--->
+B["Collaborative Score"]
+--> C
 
-Ranking
-
-Collaborative Score
-
--->
-
-Ranking
-
-Ranking
-
--->
-
-Top Products
+C --> D["Top Recommended Products"]
 ```
 
 ---
@@ -272,27 +255,16 @@ This allows recommendations to remain meaningful for new users and new products.
 ```mermaid
 flowchart LR
 
-Interaction
+A["Customer Interaction"]
+--> B["Store Interaction"]
 
--->
+B --> C["Feature Extraction"]
 
-Storage
+C --> D["Recommendation Ranking"]
 
--->
+D --> E["Display Recommendations"]
 
-Feature Extraction
-
--->
-
-Ranking
-
--->
-
-Display
-
--->
-
-New Interaction
+E --> F["Next Interaction"]
 ```
 
 ---
