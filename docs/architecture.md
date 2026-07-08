@@ -289,25 +289,31 @@ The recommendation engine executes independently of request routing.
 ```mermaid
 flowchart TD
 
-A["Product View"]
+A["Customer Opens Product"]
 
---> B["Interaction Tracking"]
+--> B["Track Interaction API"]
 
-B --> C["Interaction Store"]
+B --> C[("ML Interactions")]
 
-C --> D["Recommendation Service"]
+A --> D["Fetch Product Details"]
 
-D --> E["Content-Based Filtering (TF-IDF)"]
+D --> E["Recommendation Service"]
 
-D --> F["Collaborative Filtering"]
+E --> F["Load Products"]
 
-E --> G["Hybrid Ranking"]
+E --> G["Load User Interactions"]
 
-F --> G
+F --> H["TF-IDF Vectorization"]
 
-G --> H["Recommended Products"]
+G --> I["Collaborative Filtering"]
 
-H --> I["Frontend Display"]
+H --> J["Hybrid Ranking"]
+
+I --> J
+
+J --> K["Top N Recommendations"]
+
+K --> L["Display in Product Page"]
 ```
 
 ---
