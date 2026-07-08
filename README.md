@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="assets/banner.png" alt="Shaukin Garments Banner" width="100%">
+</p>
 <div align="center">
 
 # 🏥 Shaukin Garments
