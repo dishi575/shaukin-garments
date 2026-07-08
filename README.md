@@ -298,31 +298,23 @@ This allows customers to discover products naturally while increasing business c
 
 ---
 
-# 📸 Application Preview
-
-> Replace the placeholders below with screenshots.
+## 📸 Application Preview
 
 | Landing Page | Product Catalogue |
-|--------------|-------------------|
-| ![](assets/screenshots/home.png) | ![](assets/screenshots/catalogue.png) |
+|---------------|-------------------|
+| ![](assets/landing-page.png) | ![](assets/products-catalogue.png) |
 
----
-
-| Product Page | Shopping Cart |
-|--------------|---------------|
-| ![](assets/screenshots/product.png) | ![](assets/screenshots/cart.png) |
-
----
+| Product Page | Cart |
+|--------------|------|
+| ![](assets/product-page.png) | ![](assets/cart-page.png) |
 
 | Bulk Quote | Admin Dashboard |
-|------------|----------------|
-| ![](assets/screenshots/quote.png) | ![](assets/screenshots/admin.png) |
+|------------|-----------------|
+| ![](assets/bulk-quote-page.png) | ![](assets/admin-dashboard.png) |
 
----
-
-| Recommendation Engine | Swagger API |
-|----------------------|-------------|
-| ![](assets/screenshots/recommendations.png) | ![](assets/screenshots/swagger.png) |
+| Recommendation Engine | API Documentation |
+|-----------------------|-------------------|
+| ![](assets/recommendation-engine.png) | ![](assets/api-docs.png) |
 
 ---
 
