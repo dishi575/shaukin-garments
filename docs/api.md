@@ -21,7 +21,7 @@ http://localhost:8000
 Production
 
 ```
-https://YOUR_BACKEND_URL.onrender.com
+https://shaukin-garments.onrender.com/docs
 ```
 
 Swagger UI
