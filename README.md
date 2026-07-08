@@ -936,7 +936,7 @@ AI • Machine Learning • Full Stack Development
 
 [![GitHub](https://img.shields.io/badge/GitHub-dishi575-black?style=for-the-badge&logo=github)](https://github.com/dishi575)
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](YOUR_LINKEDIN)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/dishita-chaturvedi-ttlshiwwya/)
 
 [![Email](https://img.shields.io/badge/Email-Contact-red?style=for-the-badge&logo=gmail)](mailto:dishitachaturvedi2005@gmail.com)
 
