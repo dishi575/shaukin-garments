@@ -2,319 +2,200 @@
 
 # 🏥 Shaukin Garments
 
-### Production-Grade B2B & Retail E-Commerce Platform for Institutional Uniforms & Linens
+### Modern B2B Commerce Platform for Institutional Uniform Procurement
 
-*Digitising institutional uniform procurement through modern cloud-native architecture, intelligent product recommendations, and seamless B2B workflows.*
+<p align="center">
+A production-ready full-stack commerce platform built to digitize institutional uniform procurement through intelligent product discovery, streamlined bulk quotation workflows, and a cloud-native architecture.
+</p>
 
-<p>
+<p align="center">
 
 [![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Website-4F46E5?style=for-the-badge)](https://shaukin-garments.vercel.app)
 [![API Docs](https://img.shields.io/badge/API-Swagger_UI-009688?style=for-the-badge&logo=swagger)](https://shaukin-garments.onrender.com/docs)
-[![MIT License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.111-009688?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Supabase-3ECF8E?style=for-the-badge&logo=postgresql)](https://supabase.com)
+[![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 
 </p>
-
-<p>
-
-![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.111-009688?logo=fastapi)
-![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Supabase-336791?logo=postgresql)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38BDF8?logo=tailwind-css)
-![Cloudinary](https://img.shields.io/badge/Cloudinary-CDN-blue?logo=cloudinary)
-![JWT](https://img.shields.io/badge/Auth-JWT-orange)
-![scikit--learn](https://img.shields.io/badge/ML-TF--IDF_&_Collaborative-F7931E?logo=scikit-learn)
-
-</p>
-
----
-
-### ⭐ Highlights
-
-🚀 Production Deployment
-
-🛍️ Full Stack Commerce Platform
-
-🏥 Built for a Real Business
-
-🤖 Hybrid ML Recommendation Engine
-
-⚡ Async FastAPI Backend
-
-🔐 JWT Authentication
-
-☁️ Cloud Native Deployment
-
-📦 PostgreSQL + SQLAlchemy
-
-📱 Responsive UI
-
----
-
-### 🔗 Links
-
-| Resource | Link |
-|-----------|------|
-| 🌐 Live Website | https://shaukin-garments.vercel.app |
-| 📚 Swagger API | https://shaukin-garments.onrender.com/docs |
-| 🎥 Demo Video | *Coming Soon* |
-| 📖 Documentation | docs/ |
-| 🧠 ML Documentation | docs/recommendation-engine.md |
 
 </div>
 
 ---
 
-# 📖 Table of Contents
+# ✨ Overview
 
-- Project Overview
-- Why This Project?
-- Problem Statement
-- Solution
-- Features
-- Screenshots
-- System Architecture
-- Workflow
-- Tech Stack
-- Folder Structure
-- Installation
-- Environment Variables
-- API Documentation
-- Database Design
-- Recommendation Engine
-- Engineering Decisions
-- Technical Challenges
-- Performance
-- Security
-- Deployment
-- Roadmap
-- Known Limitations
-- Contributing
-- Author
-- License
+Shaukin Garments is a **production-grade B2B and retail e-commerce platform** designed specifically for institutional uniform suppliers.
+
+Rather than adapting a generic online store for business procurement, the platform reimagines how organizations purchase uniforms, linens, and workwear at scale. Hospitals, schools, industries, petrol pumps, and corporate offices can browse products, submit detailed bulk quotations, and manage procurement through a streamlined digital workflow.
+
+Built with a modern asynchronous backend, cloud-native deployment, and an intelligent recommendation engine, the platform transforms a traditionally manual ordering process into a scalable digital experience.
 
 ---
 
-# 🎯 Project Overview
+# 💡 Why Shaukin?
 
-Shaukin Garments is a **production-ready full-stack B2B and retail e-commerce platform** designed specifically for institutional uniform procurement.
+This project wasn't created as a portfolio exercise.
 
-Unlike conventional e-commerce websites that primarily focus on retail customers, this platform addresses the operational challenges faced by hospitals, schools, industrial organizations, petrol pumps, corporate offices, and institutional buyers who purchase uniforms and linens in bulk.
+It originated from a real business challenge.
 
-The platform combines modern cloud-native technologies with intelligent recommendation systems to digitize a traditionally manual procurement workflow.
+A family-run institutional garment business handled quotations, orders, and customer communication almost entirely through WhatsApp conversations, phone calls, and spreadsheets. As the business expanded, managing hundreds of products, bulk inquiries, pricing discussions, and inventory manually became increasingly difficult.
 
----
+Instead of choosing a generic e-commerce solution, Shaukin Garments was built from the ground up around **institutional procurement workflows**, combining retail commerce with business-specific features such as quotation management, dual pricing, inventory administration, and intelligent product recommendations.
 
-## Who is it for?
-
-### 🏥 Hospitals
-
-- Doctor Coats
-- OT Drapes
-- Scrub Suits
-- Nurse Uniforms
-- Patient Gowns
-- Bed Linens
+The result is a platform that not only serves customers more efficiently but also simplifies operations for the business itself.
 
 ---
 
-### 🏫 Schools
+# 🚀 What Makes Shaukin Different?
 
-- School Uniforms
-- Blazers
-- House T-Shirts
-- Sports Uniforms
+<table>
 
----
+<tr>
 
-### 🏭 Industries
+<td width="50%">
 
-- Safety Uniforms
-- Industrial Wear
-- Reflective Jackets
-- Worker Uniforms
+## 🏢 Built Around Procurement
 
----
+Designed for organizations—not just shoppers.
 
-### 🏢 Corporate Offices
+Institutional buyers can request quotations for multiple products, specify quantity distributions, include delivery information, and communicate custom requirements through a workflow tailored specifically for bulk purchasing.
 
-- Staff Uniforms
-- Reception Uniforms
-- Corporate Shirts
-- Sarees
+</td>
 
----
+<td width="50%">
 
-### 👤 Retail Customers
+## 🤖 Intelligent Product Discovery
 
-- Individual purchases
-- Cart & Checkout
-- Secure Authentication
+Instead of static "related products", recommendations adapt based on product similarity and customer behaviour.
 
----
+A hybrid recommendation engine combines content understanding with interaction history to surface products that are genuinely relevant.
 
-# ❤️ Why This Project?
+</td>
 
-This project wasn't built as a portfolio exercise.
+</tr>
 
-It was built to solve a **real operational problem**.
+<tr>
 
-My father's institutional uniform business handled every customer interaction through WhatsApp calls, spreadsheets, and manual negotiations.
+<td>
 
-That resulted in:
+## ⚡ Modern Backend
 
-- No searchable product catalogue
-- No inventory visibility
-- No online ordering
-- No quotation tracking
-- No centralized customer data
-- No recommendation system
-- No analytics
+A fully asynchronous REST API powers the platform with secure authentication, role-based access control, scalable database interactions, and cloud-native deployment.
 
-As the business expanded, these manual processes became increasingly difficult to manage.
+</td>
 
-Instead of adopting a generic e-commerce platform, I designed and developed a custom solution tailored specifically for institutional procurement workflows.
+<td>
 
-Today, the application serves as the digital backbone of the business.
+## ☁ Cloud Ready
+
+The application is deployed across modern cloud services with automatic deployments, managed PostgreSQL, CDN-powered media delivery, and production-ready infrastructure.
+
+</td>
+
+</tr>
+
+</table>
 
 ---
 
-# ❗ Problem Statement
+# 🌟 Core Capabilities
 
-Traditional commerce platforms like Shopify or WooCommerce are excellent for retail stores.
+<div align="center">
 
-However, institutional procurement follows an entirely different workflow.
+| 🛍 Commerce | 🏢 Procurement |
+|:-----------:|:-------------:|
+| Product Catalogue | Multi-item Quotations |
+| Smart Search & Filters | Bulk Pricing |
+| Shopping Cart | MOQ Support |
+| Secure Checkout | Delivery Details |
+| Product Variants | Organization Information |
+| Responsive UI | WhatsApp Integration |
 
-Bulk buyers don't simply add products to a cart.
+</div>
 
-They usually require:
+<br>
 
-- Multiple products in one quotation
-- Size-wise quantity breakdowns
-- MOQ enforcement
-- Different pricing for retail and bulk
-- Custom embroidery requirements
-- Negotiation before purchase
-- Delivery scheduling
-- GST documentation
+<div align="center">
 
-Generic e-commerce platforms do not provide these capabilities out of the box.
+| ⚙ Administration | 🤖 Intelligence |
+|:----------------:|:---------------:|
+| Product Management | Hybrid Recommendation Engine |
+| Inventory Control | TF-IDF Similarity |
+| Quote Dashboard | Collaborative Filtering |
+| Order Management | Behaviour Tracking |
+| User Roles | Trending Products |
+| Media Uploads | Frequently Bought Together |
 
----
-
-# ✅ Solution
-
-Shaukin Garments introduces a dedicated institutional commerce platform consisting of three major layers.
-
-## 1️⃣ Commerce Layer
-
-Handles
-
-- Product Catalogue
-- Search
-- Categories
-- Cart
-- Checkout
+</div>
 
 ---
 
-## 2️⃣ Business Layer
+# 📸 Product Tour
 
-Handles
+A quick walkthrough of the application.
 
-- Bulk Quote Workflow
-- Admin Dashboard
-- Inventory
-- Orders
-- Authentication
-- Pricing
+## 🏠 Landing Experience
 
----
+The homepage introduces institutional buyers to the platform through sector-based navigation, featured collections, and clear calls-to-action for both retail customers and bulk buyers.
 
-## 3️⃣ Intelligence Layer
-
-Provides
-
-- Hybrid Recommendations
-- Behaviour Tracking
-- Frequently Bought Together
-- Trending Products
-- Cross-category Suggestions
-
-This allows customers to discover products naturally while increasing business conversions.
+![](assets/landing-page.png)
 
 ---
 
-# ✨ Key Features
+## 🛍 Explore the Catalogue
 
-## 🛍 Customer Experience
+Browse products using category filters, search, and bulk availability options.
 
-- ✅ Beautiful Landing Page
-- ✅ Responsive Design
-- ✅ Product Catalogue
-- ✅ Advanced Search
-- ✅ Category Filtering
-- ✅ Product Detail Pages
-- ✅ Image Gallery
-- ✅ Dual Pricing (Retail & Bulk)
-- ✅ Shopping Cart
-- ✅ GST Calculation
-- ✅ Bulk Quote Request
-- ✅ WhatsApp Integration
-- ✅ Personalized Recommendations
+![](assets/products-catalogue.png)
 
 ---
 
-## 🏢 Institutional Features
+## 📦 Product Details
 
-- ✅ Multi-item Quotations
-- ✅ MOQ Enforcement
-- ✅ Delivery Information
-- ✅ Custom Notes
-- ✅ Organization Details
-- ✅ Bulk Pricing
+Each product page provides detailed specifications, pricing for both retail and institutional purchases, stock information, image galleries, and intelligent recommendations.
+
+![](assets/product-page.png)
 
 ---
 
-## 🔐 Authentication
+## 🛒 Shopping Cart
 
-- JWT Authentication
-- Role Based Access
-- Admin Dashboard
-- Retail Users
-- Institutional Users
+Persistent shopping cart with quantity controls, automatic GST calculation, and seamless checkout.
+
+![](assets/cart-page.png)
 
 ---
 
-## 🤖 Machine Learning
+## 🏢 Institutional Quotation Workflow
 
-- Hybrid Recommendation Engine
-- TF-IDF
-- Collaborative Filtering
-- Interaction Tracking
-- Cosine Similarity
-- Frequently Bought Together
-- Trending Products
+Organizations can request quotations containing multiple products, quantity breakdowns, delivery information, and custom requirements through a dedicated procurement workflow.
+
+![](assets/bulk-quote-page.png)
 
 ---
 
-## 📸 Application Preview
+## ⚙ Administrative Dashboard
 
-| Landing Page | Product Catalogue |
-|---------------|-------------------|
-| ![](assets/landing-page.png) | ![](assets/products-catalogue.png) |
+Administrators manage inventory, products, quotations, customer requests, and operational workflows from a centralized dashboard.
 
-| Product Page | Cart |
-|--------------|------|
-| ![](assets/product-page.png) | ![](assets/cart-page.png) |
+![](assets/admin-dashboard.png)
 
-| Bulk Quote | Admin Dashboard |
-|------------|-----------------|
-| ![](assets/bulk-quote-page.png) | ![](assets/admin-dashboard.png) |
+---
 
-| Recommendation Engine | API Documentation |
-|-----------------------|-------------------|
-| ![](assets/recommendation-engine.png) | ![](assets/api-docs.png) |
+## 🤖 Intelligent Recommendations
+
+The recommendation engine continuously learns from customer interactions to provide relevant product suggestions across the catalogue.
+
+![](assets/recommendation-engine.png)
+
+---
+
+## 📚 Interactive API Documentation
+
+Every endpoint is documented automatically through FastAPI's OpenAPI integration.
+
+![](assets/api-docs.png)
 
 ---
 
@@ -323,454 +204,92 @@ This allows customers to discover products naturally while increasing business c
 ```mermaid
 graph TD
 
-A[Customer]
+User["👤 Customer / Institution"]
 
-A --> B[Next.js 14 Frontend]
+User --> Frontend["Next.js Frontend"]
 
-B --> C[FastAPI Backend]
+Frontend --> Backend["FastAPI Backend"]
 
-C --> D[JWT Authentication]
+Backend --> Auth["JWT Authentication"]
 
-C --> E[Product APIs]
+Backend --> Products["Product Service"]
 
-C --> F[Bulk Quote APIs]
+Backend --> Quotes["Quote Service"]
 
-C --> G[Recommendation Engine]
+Backend --> Orders["Order Service"]
 
-E --> H[(PostgreSQL)]
+Backend --> Recommender["Recommendation Engine"]
 
-F --> H
+Products --> Database[(PostgreSQL)]
 
-G --> H
+Quotes --> Database
 
-C --> I[Cloudinary]
+Orders --> Database
 
-C --> J[WhatsApp Integration]
+Recommender --> Database
 
-C --> K[Razorpay]
+Backend --> Cloudinary["Cloudinary"]
 
-G --> L[TF-IDF Engine]
+Backend --> Razorpay["Razorpay"]
 
-G --> M[Collaborative Filtering]
+Backend --> WhatsApp["WhatsApp"]
 
-L --> N[Hybrid Ranking]
+Recommender --> TFIDF["TF-IDF"]
 
-M --> N
+Recommender --> Collaborative["Collaborative Filtering"]
 
-N --> B
+TFIDF --> Ranking["Hybrid Ranking"]
+
+Collaborative --> Ranking
+
+Ranking --> Frontend
 ```
 
 ---
 
-# ⚙ Overall Workflow
+# 🔄 Customer Journey
 
 ```mermaid
-flowchart TD
+flowchart LR
 
-A[User Visits Website]
+A["Visit Website"]
 
-A --> B[Browse Products]
+--> B["Browse Catalogue"]
 
-B --> C[Search / Filter]
+--> C["Open Product"]
 
-C --> D[Open Product]
+C --> D["View Recommendations"]
 
-D --> E[Track User Behaviour]
+C --> E["Add to Cart"]
 
-E --> F[Recommendation Engine]
+E --> F["Checkout"]
 
-F --> G[Display Personalized Products]
+F --> G["Place Order"]
 
-D --> H[Add to Cart]
+C --> H["Request Bulk Quote"]
 
-H --> I[Checkout]
+H --> I["Admin Reviews Quote"]
 
-I --> J[Order Created]
+I --> J["Quotation Sent"]
 
-D --> K[Bulk Quote]
-
-K --> L[Admin Dashboard]
-
-L --> M[Quote Response]
-
-```
-# 🛠 Technology Stack
-
-The platform is built using a modern cloud-native architecture focused on scalability, maintainability, and developer productivity.
-
-| Category | Technology | Why It Was Chosen |
-|----------|------------|-------------------|
-| **Frontend** | Next.js 14 (App Router) | Server Components, routing, performance, SEO |
-| **Language** | TypeScript | Static typing and maintainability |
-| **Styling** | Tailwind CSS | Utility-first styling with rapid UI development |
-| **Client State** | Zustand | Lightweight global state for authentication and shopping cart |
-| **Server State** | TanStack Query | Data fetching, caching and background synchronization |
-| **Forms** | React Hook Form | Efficient form handling with minimal re-renders |
-| **Backend** | FastAPI | High-performance asynchronous REST API framework |
-| **Language** | Python 3.11 | Mature ecosystem and ML support |
-| **ORM** | SQLAlchemy 2.0 Async | Type-safe asynchronous database operations |
-| **Database Driver** | asyncpg | High-performance PostgreSQL async driver |
-| **Database** | PostgreSQL (Supabase) | ACID compliance, relational data, JSONB support |
-| **Authentication** | JWT + bcrypt | Secure stateless authentication |
-| **Machine Learning** | scikit-learn | TF-IDF Vectorization & Cosine Similarity |
-| **Media Storage** | Cloudinary | Optimized image hosting and CDN delivery |
-| **Payments** | Razorpay | Indian payment gateway |
-| **Deployment (Frontend)** | Vercel | Optimized deployment for Next.js |
-| **Deployment (Backend)** | Render | Cloud hosting for FastAPI |
-| **Version Control** | Git & GitHub | Source code management |
-
----
-
-# 📂 Project Structure
-
-```text
-shaukin-garments/
-│
-├── backend/
-│   ├── app/
-│   │   ├── core/
-│   │   ├── db/
-│   │   ├── ml/
-│   │   ├── models/
-│   │   ├── routers/
-│   │   ├── schemas/
-│   │   └── services/
-│   │
-│   ├── schema.sql
-│   ├── requirements.txt
-│   └── main.py
-│
-├── frontend/
-│   ├── app/
-│   ├── components/
-│   ├── hooks/
-│   ├── lib/
-│   ├── store/
-│   └── public/
-│
-├── assets/
-│   ├── landing-page.png
-│   ├── products-catalogue.png
-│   ├── product-page.png
-│   ├── cart-page.png
-│   ├── bulk-quote-page.png
-│   ├── admin-dashboard.png
-│   ├── recommendation-engine.png
-│   └── api-docs.png
-│
-├── docs/
-│
-├── README.md
-│
-└── LICENSE
+J --> K["Business Confirmed"]
 ```
 
 ---
 
-# 🚀 Getting Started
+# ⚡ At a Glance
 
-## Prerequisites
-
-Before running the project, ensure you have the following installed.
-
-- Node.js 18+
-- Python 3.11+
-- PostgreSQL / Supabase
-- Git
-
----
-
-# Clone Repository
-
-```bash
-git clone https://github.com/dishi575/shaukin-garments.git
-
-cd shaukin-garments
-```
+| | |
+|---|---|
+| **Frontend** | Next.js 14 + TypeScript |
+| **Backend** | FastAPI |
+| **Database** | PostgreSQL (Supabase) |
+| **Authentication** | JWT |
+| **State Management** | Zustand + TanStack Query |
+| **Machine Learning** | TF-IDF + Collaborative Filtering |
+| **Media Storage** | Cloudinary |
+| **Deployment** | Vercel + Render |
 
 ---
 
-# Backend Setup
-
-```bash
-cd backend
-
-python -m venv venv
-```
-
-### Activate Virtual Environment
-
-Windows
-
-```bash
-venv\Scripts\activate
-```
-
-Linux / macOS
-
-```bash
-source venv/bin/activate
-```
-
-Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-Create Environment File
-
-```bash
-cp .env.example .env
-```
-
-Run Database Schema
-
-```bash
-psql DATABASE_URL -f schema.sql
-```
-
-Run Backend
-
-```bash
-uvicorn main:app --reload
-```
-
-Backend
-
-```
-http://localhost:8000
-```
-
-Swagger
-
-```
-http://localhost:8000/docs
-```
-
----
-
-# Frontend Setup
-
-```bash
-cd frontend
-
-npm install
-```
-
-Create
-
-```text
-.env.local
-```
-
-Run
-
-```bash
-npm run dev
-```
-
-Frontend
-
-```
-http://localhost:3000
-```
-
----
-
-# 🔐 Environment Variables
-
-## Backend
-
-| Variable | Required | Description |
-|-----------|----------|-------------|
-| DATABASE_URL | ✅ | PostgreSQL Database URL |
-| SECRET_KEY | ✅ | JWT Secret |
-| ALGORITHM | ✅ | JWT Algorithm |
-| ACCESS_TOKEN_EXPIRE_MINUTES | ✅ | Token Expiry |
-| CLOUDINARY_CLOUD_NAME | ✅ | Cloudinary Cloud |
-| CLOUDINARY_API_KEY | ✅ | Cloudinary API Key |
-| CLOUDINARY_API_SECRET | ✅ | Cloudinary Secret |
-| RAZORPAY_KEY_ID | Optional | Razorpay |
-| RAZORPAY_KEY_SECRET | Optional | Razorpay Secret |
-
----
-
-## Frontend
-
-| Variable | Required |
-|-----------|----------|
-| NEXT_PUBLIC_API_URL | ✅ |
-| NEXT_PUBLIC_RAZORPAY_KEY | Optional |
-
----
-
-# ⚙ Configuration
-
-## Backend
-
-- FastAPI
-- SQLAlchemy Async
-- JWT Authentication
-- AsyncPG
-- Pydantic
-
----
-
-## Frontend
-
-- Next.js App Router
-- Zustand
-- TanStack Query
-- TailwindCSS
-
----
-
-# 📡 REST API Overview
-
-## Authentication
-
-| Method | Endpoint |
-|----------|-----------|
-| POST | /api/auth/register |
-| POST | /api/auth/login |
-| GET | /api/auth/me |
-
----
-
-## Products
-
-| Method | Endpoint |
-|----------|-----------|
-| GET | /api/products |
-| GET | /api/products/{slug} |
-| POST | /api/products |
-| PATCH | /api/products/{id} |
-| DELETE | /api/products/{id} |
-
----
-
-## Quotes
-
-| Method | Endpoint |
-|----------|-----------|
-| POST | /api/quotes |
-| GET | /api/quotes |
-| PATCH | /api/quotes/{id} |
-
----
-
-## Orders
-
-| Method | Endpoint |
-|----------|-----------|
-| POST | /api/orders |
-| GET | /api/orders/my |
-
----
-
-## Recommendations
-
-| Method | Endpoint |
-|----------|-----------|
-| POST | /api/recommendations/track |
-| GET | /api/recommendations/product/{id} |
-| GET | /api/recommendations/home |
-
----
-
-# 🧾 Sample API Request
-
-```http
-POST /api/quotes
-```
-
-```json
-{
-  "guest_name":"City Hospital",
-  "guest_phone":"9876543210",
-  "items":[
-      {
-          "name":"Doctor Coat",
-          "qty":50
-      }
-  ]
-}
-```
-
-Response
-
-```json
-{
-  "status":"pending",
-  "message":"Quote request received."
-}
-```
-
----
-
-# 🗄 Database Design
-
-## Core Tables
-
-- Users
-- Products
-- Categories
-- Orders
-- Bulk Quotes
-- ML Interactions
-
----
-
-## Entity Relationship Diagram
-
-```mermaid
-erDiagram
-
-USERS ||--o{ ORDERS : places
-
-USERS ||--o{ BULK_QUOTES : submits
-
-CATEGORIES ||--o{ PRODUCTS : contains
-
-PRODUCTS ||--o{ ML_INTERACTIONS : tracked
-
-USERS ||--o{ ML_INTERACTIONS : performs
-```
-
----
-
-## Database Design Decisions
-
-### Why PostgreSQL?
-
-- ACID Compliance
-- JSONB Support
-- Strong Relationships
-- Mature Ecosystem
-- Excellent Query Performance
-
----
-
-### Why UUIDs?
-
-- More secure than sequential IDs
-- Prevent resource enumeration
-- Better suited for distributed systems
-
----
-
-### Why JSONB?
-
-Bulk quotations and order snapshots are stored using JSONB to preserve the original order details even if product information changes later.
-
----
-
-### Indexes Used
-
-- Product Slug
-- Category
-- Email
-- Recommendation Queries
-- Quote Status
-- Product Search
+> 📌 **Continue to Part 2** for the technical architecture, technology stack, installation guide, API overview, and project structure.
