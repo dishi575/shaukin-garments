@@ -25,6 +25,17 @@ A production-ready full-stack commerce platform built to digitize institutional 
 </div>
 
 ---
+## 🎥 Product Walkthrough
+
+<p align="center">
+  <a href="https://youtu.be/YE5mcrzjyJQ">
+    <img src="assets/banner.png" alt="Watch Demo" width="100%">
+  </a>
+</p>
+
+<p align="center">
+  <b>Click the banner to watch the complete product walkthrough.</b>
+</p>
 
 # ✨ Introduction
 
