@@ -28,14 +28,15 @@ A production-ready full-stack commerce platform built to digitize institutional 
 ## 🎥 Product Walkthrough
 
 <p align="center">
-  <a href="https://youtu.be/YE5mcrzjyJQ">
-    <img src="assets/banner.png" alt="Watch Demo" width="100%">
-  </a>
+<a href="https://youtu.be/YOUR_VIDEO">
+<img src="assets/landing-page.png" width="850">
+</a>
 </p>
 
-<p align="center">
-  <b>Click the banner to watch the complete product walkthrough.</b>
-</p>
+> [!TIP]
+> Click the image above to watch a **4-minute walkthrough** covering the complete application, including authentication, product browsing, institutional procurement, recommendation engine, and administrative workflows.
+
+---
 
 # ✨ Introduction
 
